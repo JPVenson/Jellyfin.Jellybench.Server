@@ -1,18 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
-
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
   <ItemGroup>
+    <Content Remove="swagger.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <OpenApiReference Include="..\Server\swagger.json" CodeGenerator="NSwagCSharp" Namespace="Jellyfin.Jellybench.Server.Client.Api" ClassName="JellybenchApiClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Blazorise.Bootstrap5" Version="1.2.4" />
+    <PackageReference Include="Blazorise.Charts" Version="1.2.4" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.7" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="7.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="NSwag.ApiDescription.Client" Version="13.18.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Shared\Jellyfin.Jellybench.Server.Shared.csproj" />
   </ItemGroup>
-
 </Project>

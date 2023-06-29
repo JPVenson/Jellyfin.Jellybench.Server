@@ -1,0 +1,119 @@
+openapi: 3.0.1
+info:
+  title: Jellybench
+  version: v1
+paths:
+  /api/ChartApi/GetCpuChartValues:
+    get:
+      tags:
+        - ChartApi
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Int32ChartDataSeries'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Int32ChartDataSeries'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Int32ChartDataSeries'
+  /api/Jellybench/PrepareDataPoints:
+    get:
+      tags:
+        - Jellybench
+      responses:
+        '200':
+          description: Success
+  /api/Jellybench/Results:
+    post:
+      tags:
+        - Jellybench
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JellybenchResult'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/JellybenchResult'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/JellybenchResult'
+      responses:
+        '200':
+          description: Success
+components:
+  schemas:
+    Int32ChartDataSeries:
+      type: object
+      properties:
+        labels:
+          type: array
+          items:
+            type: string
+          nullable: true
+        values:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+      additionalProperties: false
+    JellybenchResult:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/JellybenchResultDataPoint'
+          nullable: true
+        cpuName:
+          type: string
+          nullable: true
+        cpuManufacture:
+          type: string
+          nullable: true
+        numberCores:
+          type: string
+          nullable: true
+        systemRam:
+          type: string
+          nullable: true
+        gpuName:
+          type: string
+          nullable: true
+        gpuManufacture:
+          type: string
+          nullable: true
+        gpuRam:
+          type: string
+          nullable: true
+        jellyfinConfigDirectoryDiscType:
+          $ref: '#/components/schemas/StorageType'
+        jellyfinMediaDirectoryDiscType:
+          $ref: '#/components/schemas/StorageType'
+        dataRequestKey:
+          type: string
+          nullable: true
+      additionalProperties: false
+    JellybenchResultDataPoint:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        numberOfStreams:
+          type: integer
+          format: int32
+      additionalProperties: false
+    StorageType:
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      type: integer
+      format: int32

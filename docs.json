@@ -1,0 +1,143 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Jellybench",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/ChartApi/GetCpuChartValues": {
+      "get": {
+        "tags": [
+          "ChartApi"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Jellybench/PrepareDataPoints": {
+      "get": {
+        "tags": [
+          "Jellybench"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Jellybench/Results": {
+      "post": {
+        "tags": [
+          "Jellybench"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JellybenchResult"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JellybenchResult"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/JellybenchResult"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "JellybenchResult": {
+        "type": "object",
+        "properties": {
+          "dataPoints": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JellybenchResultDataPoint"
+            },
+            "nullable": true
+          },
+          "cpuName": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpuManufacture": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberCores": {
+            "type": "string",
+            "nullable": true
+          },
+          "systemRam": {
+            "type": "string",
+            "nullable": true
+          },
+          "gpuName": {
+            "type": "string",
+            "nullable": true
+          },
+          "gpuManufacture": {
+            "type": "string",
+            "nullable": true
+          },
+          "gpuRam": {
+            "type": "string",
+            "nullable": true
+          },
+          "jellyfinConfigDirectoryDiscType": {
+            "$ref": "#/components/schemas/StorageType"
+          },
+          "jellyfinMediaDirectoryDiscType": {
+            "$ref": "#/components/schemas/StorageType"
+          },
+          "dataRequestKey": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "JellybenchResultDataPoint": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberOfStreams": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "StorageType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      }
+    }
+  }
+}
