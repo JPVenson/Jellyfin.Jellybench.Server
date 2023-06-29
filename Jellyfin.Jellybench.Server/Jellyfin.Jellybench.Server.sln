@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jellyfin.Jellybench.Server.Server", "Jellyfin.Jellybench.Server\Server\Jellyfin.Jellybench.Server.Server.csproj", "{A6E4C32A-AACC-4E61-AC46-C39F523A18F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jellyfin.Jellybench.Server.Client", "Jellyfin.Jellybench.Server\Client\Jellyfin.Jellybench.Server.Client.csproj", "{3BE4DC03-9855-4713-9934-04070CB7F28F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jellyfin.Jellybench.Server.Shared", "Jellyfin.Jellybench.Server\Shared\Jellyfin.Jellybench.Server.Shared.csproj", "{A120A5E8-699E-41AB-9C2B-A41802446ADE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6E4C32A-AACC-4E61-AC46-C39F523A18F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E4C32A-AACC-4E61-AC46-C39F523A18F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E4C32A-AACC-4E61-AC46-C39F523A18F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E4C32A-AACC-4E61-AC46-C39F523A18F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BE4DC03-9855-4713-9934-04070CB7F28F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BE4DC03-9855-4713-9934-04070CB7F28F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BE4DC03-9855-4713-9934-04070CB7F28F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BE4DC03-9855-4713-9934-04070CB7F28F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A120A5E8-699E-41AB-9C2B-A41802446ADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A120A5E8-699E-41AB-9C2B-A41802446ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A120A5E8-699E-41AB-9C2B-A41802446ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A120A5E8-699E-41AB-9C2B-A41802446ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A1F6BE0-459A-4747-A7D5-579278F8AA74}
+	EndGlobalSection
+EndGlobal
